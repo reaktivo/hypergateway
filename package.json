@@ -1,0 +1,16 @@
+{
+  "name": "@reaktivo/hypergateway",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Marcel Miranda",
+  "type": "module",
+  "license": "ISC",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@hyperspace/cli": "^1.0.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {}
+}
