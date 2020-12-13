@@ -9,7 +9,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@hyperspace/cli": "^1.0.1",
+    "@hyperspace/cli": "^1.1.1",
     "express": "^4.17.1"
   },
   "devDependencies": {}
