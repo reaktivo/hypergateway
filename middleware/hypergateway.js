@@ -33,7 +33,7 @@ export default (req, res) => {
 
   function next(url) {
     console.log(url);
-    const subprocess = child_process.spawn(`hyp`, [`cat`, url]);
+    const subprocess = child_process.spawn(`./node_modules/.bin/hyp`, [`cat`, url]);
     
     function onData(data) {
       res.write(data);
