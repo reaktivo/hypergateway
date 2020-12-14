@@ -1,4 +1,5 @@
 import child_process from 'child_process';
+import mime from 'mime';
 import { rootHyperdriveKey } from '../config.js';
 
 /**
@@ -31,11 +32,17 @@ function getTryUrls(url) {
 export default (req, res) => {
   const urls = getTryUrls(getUrl(req));
 
+  let headersSent = false;
+
   function next(url) {
     console.log(url);
     const subprocess = child_process.spawn(`./node_modules/.bin/hyp`, [`cat`, url]);
     
     function onData(data) {
+      if (!headersSent) {
+        res.setHeader('content-type', mime.getType(url));
+        headersSent = true;
+      }
       res.write(data);
     }
 
